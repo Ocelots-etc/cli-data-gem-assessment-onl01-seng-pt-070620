@@ -10,5 +10,4 @@ gem 'rest-client', '~> 2.1'
 gem 'json', '~> 2.3'
 gem 'pry', '~> 0.13.0'
 gem 'rails-html-sanitizer', '~> 1.3'
-
-
+gem 'figaro', '~> 1.2'
