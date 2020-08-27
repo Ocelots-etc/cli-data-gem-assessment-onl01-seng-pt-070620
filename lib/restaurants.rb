@@ -6,14 +6,14 @@ class Restaurants
   @@all = []  # the class variable array
 
   #------------------------------------------------------------------------------------
-  def initialize(name, formatted_address, opening_hours, rating, user_ratings_total, place_id) #, formatted_address, opening_hours, rating, user_ratings_total)  # this method creates a new instances of a
-
+  def initialize(name, formatted_address, opening_hours, rating, user_ratings_total, place_id) #, formatted_address, opening_hours, rating, user_ratings_total) #, formatted_address, opening_hours, rating, user_ratings_total)  # this method creates a new instances of a
     @name = name  # book from the API output and assigns the attributes to instance variables
     @formatted_address = formatted_address
     @opening_hours = opening_hours
     @rating = rating
     @user_ratings_total = user_ratings_total
     @place_id = place_id
+    # @place_id = place_id
     @@all << self  # stores each and every instance of a book in the class variable array
   end
   #------------------------------------------------------------------------------------
