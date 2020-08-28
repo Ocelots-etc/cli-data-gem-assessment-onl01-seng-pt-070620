@@ -24,8 +24,8 @@ class CLI
     puts "~~~~~     ~~~~~     ~~~~~    ~~~~~     ~~~~~     ~~~~~    ~~~~~     ~~~~~     ~~~~~    ~~~~~" #.colorize(:color => :green) #, :background => :green) # line for spacing aesthetics
 
     input = gets.chomp.to_i - 1 # user input is requested and the user input is turned into an integer for indexing purposes
-    if input < 0 || input > 19 # user input is outside of the range of the index of my bookshelf, it tells the user they made the wrong selection
-      # self.wrong_selection
+    if input < 0 || input > 9 # user input is outside of the range of the index of my bookshelf, it tells the user they made the wrong selection
+      self.wrong_selection
     end
       restaurant = Restaurants.all[input] # the variable book is becoming the instance which was selected by the user
       @@restaurant = restaurant
@@ -49,7 +49,43 @@ class CLI
     puts "Rating: #{restaurant.rating}"
     puts "User Ratings Total: #{restaurant.user_ratings_total}"
     puts "Place ID for Google Reference: #{restaurant.place_id}"
-    # self.user_options
+    self.user_options
   end
+
+  def self.user_options
+    puts "Please type 11 followed by ENTER if you would like to exit the booku program." # give the user the option of exiting the program
+    puts " "
+    puts "Otherwise, you may type 12 followed by ENTER to choose a book from the shelf." # give the user an option to choose another book
+    input = gets.chomp.to_i
+    if input == 11
+      self.leave_list
+    elsif input == 12  
+      self.list_restaurants 
+    else  # lists the books on my bookshelf for user selection using Command Line Interface
+    # if input.between?(1, 10)  
+    #   # self.mystery 
+      self.wrong_selection
+    end
+      # self.wrong_selection
+  end
+
+  def self.leave_list
+    # curtains(5, 0.1)
+    puts " "
+    puts "                     Thank you for viewing my restaurants." #.cyan
+    puts " "
+    # curtains(5, 0.1)
+    exit
+  end
+
+  def self.wrong_selection
+    # if input = 11..# anything not 12 or 11 - and above 10 and symbols and letters etc
+      # curtains(2, 0.75)
+      puts " "
+      puts "                      Oops, you made an invalid selection." #.colorize(:color => :magenta)
+      puts " "
+      self.user_options
+  end
+
 
 end

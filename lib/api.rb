@@ -10,7 +10,6 @@ class API
       restaurant = restaurants_hash["results"][index]
       Restaurants.new(restaurant["name"], restaurant["formatted_address"], restaurant["opening_hours"], restaurant["rating"], restaurant["user_ratings_total"], restaurant["place_id"] )
     end
-
   end
 
 end
