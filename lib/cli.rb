@@ -87,5 +87,4 @@ class CLI
       self.user_options
   end
 
-
 end
